@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import F1constructeur from "./Page2/F1-constructeur";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = () => {
+    const [mesConstruteurs, setMesConstructeurs] = useState([])
+
+    const requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+    };
+
+    async function getData() {
+        const response = await fetch("http://ergast.com/api/f1/2021/constructors.json")
+        const data = await response.json()
+        setMesConstructeurs(data.MRData.ConstructorTable.Constructors)
+        console.log(mesConstruteurs)
+    }
+
+    getData()
+
+    return (
+        <div>
+            <F1constructeur nomConstructeur={mesConstruteurs} origine={'Pays'}/>
+
+            {mesConstruteurs.map((constructeur) => {return <div key={constructeur.constructorId}>{constructeur.constructorId}</div>})}
+        </div>
+    )
 }
 
-export default App;
+export default App
