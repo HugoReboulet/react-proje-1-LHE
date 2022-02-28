@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-
+// on utilise react router dom pour pouvoirr utiliser plusieurs page 
 // page d'acceuil contenant les liens vers les 2 autres pages
 export default function App() {
   return (
