@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import F1constructeur from "./Page2/F1-constructeur";
+import F1constructeur from "./F1constructeur";
 
 const App = () => {
   const [mesConstruteurs, setMesConstructeurs] = useState([]);
