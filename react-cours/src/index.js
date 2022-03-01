@@ -2,6 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import App from "./App";
+import Page2 from "./routes/page2";
+import Page1 from "./routes/page1";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -9,11 +14,6 @@ ReactDOM.render(
     <App />
   </React.StrictMode>,
   document.getElementById("root")
-import { render } from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
-import Page2 from "./routes/page2";
-import Page1 from "./routes/page1";
 
 // chacune des routes contient des url et a quel page jsx les associer
 // la route * prend en charge tout les url non défini
